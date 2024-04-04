@@ -1,0 +1,409 @@
+<!-- <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon CMS</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Container styles */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        /* Header styles */
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            float: left;
+        }
+
+        nav ul {
+            float: right;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Hero section styles */
+        .hero {
+            background: #007bff;
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* Articles section styles */
+        .articles {
+            padding: 40px 0;
+        }
+
+        .articles h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .articles ul {
+            list-style: none;
+        }
+
+        .articles ul li {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .articles ul li h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Footer styles */
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Button styles */
+        .btn {
+            display: inline-block;
+            background: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        /* Nouvelle section pour afficher les images aléatoires */
+        .random-images {
+            display: none; /* Masquer la section par défaut */
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .image-gallery img {
+            max-width: 200px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Mon CMS</h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}" onclick="showRandomImages()">Accueil</a></li>
+                    <li><a href="{{ url_for('create_article') }}">Créer un article</a></li>
+                    {% if current_user.is_authenticated %}
+                        <li><a href="{{ url_for('logout') }}">Déconnexion</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('login') }}">Connexion</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Bienvenue sur Mon CMS</h2>
+                <p>Créez, modifiez et partagez du contenu de manière simple et rapide.</p>
+            </div>
+        </section>
+
+        <section class="articles">
+            <div class="container">
+                <h2>Derniers articles</h2>
+                <ul>
+                    {% for article in articles %}
+                        <li>
+                            <h3>{{ article.title }}</h3>
+                            <p>{{ article.content }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+
+        <!-- Nouvelle section pour afficher les images aléatoires -->
+        <section class="random-images" id="random-images-section">
+            <h2>Images aléatoires</h2>
+            <div class="image-gallery">
+                <!-- Les images aléatoires seront chargées ici dynamiquement -->
+            </div>
+            <button onclick="loadRandomImages()">Afficher de nouvelles images</button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mon CMS. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showRandomImages() {
+            var randomImagesSection = document.getElementById('random-images-section');
+            randomImagesSection.style.display = 'block'; // Afficher la section des images aléatoires
+            loadRandomImages(); // Charger les images aléatoires
+        }
+
+        function loadRandomImages() {
+            // Vous pouvez effectuer une requête à une API ici pour récupérer des images aléatoires
+            // Par exemple, vous pouvez utiliser fetch() pour récupérer des données depuis une URL
+            // et mettre à jour dynamiquement le contenu de la galerie d'images.
+            // Cette fonction est un exemple simplifié.
+            alert("Chargement d'images aléatoires...");
+        }
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon CMS</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Container styles */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        /* Header styles */
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            float: left;
+        }
+
+        nav ul {
+            float: right;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Hero section styles */
+        .hero {
+            background: #007bff;
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* Articles section styles */
+        .articles {
+            padding: 40px 0;
+        }
+
+        .articles h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .articles ul {
+            list-style: none;
+        }
+
+        .articles ul li {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .articles ul li h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Footer styles */
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Button styles */
+        .btn {
+            display: inline-block;
+            background: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        /* Nouvelle section pour afficher les images aléatoires */
+        .random-images {
+            display: none; /* Masquer la section par défaut */
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .image-gallery img {
+            max-width: 200px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Mon CMS</h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}" onclick="showRandomImages()">Accueil</a></li>
+                    <li><a href="{{ url_for('create_article') }}">Créer un article</a></li>
+                    {% if current_user.is_authenticated %}
+                        <li><a href="{{ url_for('logout') }}">Déconnexion</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('login') }}">Connexion</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Bienvenue sur Mon CMS</h2>
+                <p>Créez, modifiez et partagez du contenu de manière simple et rapide.</p>
+            </div>
+        </section>
+
+        <section class="articles">
+            <div class="container">
+                <h2>Derniers articles</h2>
+                <ul>
+                    {% for article in articles %}
+                        <li>
+                            <h3>{{ article.title }}</h3>
+                            <p>{{ article.content }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+
+        <!-- Nouvelle section pour afficher les images aléatoires -->
+        <section class="random-images" id="random-images-section">
+            <h2>Images aléatoires</h2>
+            <div class="image-gallery">
+                <!-- Les images aléatoires seront chargées ici dynamiquement -->
+            </div>
+            <button onclick="loadRandomImages()">Afficher de nouvelles images</button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mon CMS. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Fonction pour charger les images aléatoires dès le chargement de la page
+        window.onload = function() {
+            loadRandomImages(); // Charger les images aléatoires
+        }
+
+        function showRandomImages() {
+            var randomImagesSection = document.getElementById('random-images-section');
+            randomImagesSection.style.display = 'block'; // Afficher la section des images aléatoires
+            loadRandomImages(); // Charger les images aléatoires
+        }
+
+        function loadRandomImages() {
+            // Vous pouvez effectuer une requête à une API ici pour récupérer des images aléatoires
+            // Par exemple, vous pouvez utiliser fetch() pour récupérer des données depuis une URL
+            // et mettre à jour dynamiquement le contenu de la galerie d'images.
+            // Cette fonction est un exemple simplifié.
+            alert("Chargement d'images aléatoires...");
+        }
+    </script>
+</body>
+</html>
